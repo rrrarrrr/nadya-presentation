@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Siren Beauty Service | Коммерческое предложение</title>
+    <style>
+        :root {
+            --bg-color: #F8F5F2;
+            --card-bg: #FFFFFF;
+            --accent-dark: #2C2623;
+            --accent-taupe: #B59B8C;
+            --accent-soft: #F1E9E3;
+            --text-main: #1A1A1A;
+            --text-muted: #6B5B52;
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 50px 30px;
+            border-radius: 24px;
+            border: 1px solid #E5DFDA;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            color: var(--accent-dark);
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 17px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 28px;
+            border: 1px solid #E5DFDA;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 20px;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 260px;
+            background: #EFEAE6;
+            border: 2px dashed var(--accent-taupe);
+            border-radius: 14px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--accent-dark);
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .bullet-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-taupe);
+            font-size: 11px;
+        }
+
+        .cta-banner {
+            background: var(--accent-dark);
+            color: #FFFFFF;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-banner h3 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .cta-banner p {
+            color: #D4C7BF;
+            margin-bottom: 24px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent-taupe);
+            color: var(--accent-dark);
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <span class="badge">Office Siren Aesthetic ✦ Corporate Perks</span>
+        <h1>Office Siren: Выездной бьюти-сервис</h1>
+        <p class="subtitle">Формат премиального ухода, идеального стиля и вдохновения прямо в пространстве вашей IT-компании.</p>
+    </header>
+
+    <div class="grid-section">
+        <div class="card">
+            <!-- Место под видео Надежды -->
+            <div class="video-placeholder">
+                <span style="font-size: 24px; margin-bottom: 8px;">🎬</span>
+                <strong>[ Место под ваше видео / Reels ]</strong>
+                <span style="font-size: 12px;">Атмосфера бьюти-зоны в офисе</span>
+            </div>
+            <div>
+                <h2>Эстетика Office Siren в вашем офисе</h2>
+                <p>Трендовый образ уверенной, стильной и ухоженной IT-профессионалки. Мы создаем пространство, где каждая сотрудница может переключиться и обновить образ без выезда в салон.</p>
+                <ul class="bullet-list">
+                    <li>Стильные экспресс-укладки и нюдовый макияж</li>
+                    <li>Экономия времени в рабочем графике</li>
+                    <li>Повышение лояльности и атмосферы в команде</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <!-- Пример визуализации с фото -->
+            <div class="video-placeholder">
+                <span style="font-size: 24px; margin-bottom: 8px;">🎬</span>
+                <strong>[ Место под видео 2 ]</strong>
+                <span style="font-size: 12px;">Процесс работы колориста / стилиста</span>
+            </div>
+            <div>
+                <h2>Сервис для важных событий и будней</h2>
+                <p>Подготовка девушек к съёмкам, конференциям, важным питчам или просто регулярные бьюти-пятницы для команды.</p>
+                <ul class="bullet-list">
+                    <li>Выезд топ-стилиста и колориста</li>
+                    <li>Модные стрижки и актуальное окрашивание</li>
+                    <li>Премиальный уход за волосами</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-banner">
+        <h3>Готовы организовать тестовый Beauty-день?</h3>
+        <p>Мы привезём всё необходимое оборудование, свет и косметику. От вас нужен только свободный уголок в офисе.</p>
+        <a href="#" class="btn-primary">Забронировать бьюти-день</a>
+    </div>
+
+</div>
+
+</body>
+</html>
