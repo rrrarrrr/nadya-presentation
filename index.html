@@ -34,7 +34,8 @@
             font-family: var(--font-sans);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            padding: 20px 15px 60px 15px;
+            padding: 20px 12px 60px 12px;
+            overflow-x: hidden; /* Защита от горизонтальной прокрутки */
         }
 
         .magazine-container {
@@ -45,8 +46,9 @@
             -webkit-backdrop-filter: blur(18px);
             border: 1px solid var(--border-color);
             border-radius: 28px;
-            padding: 48px 24px;
+            padding: 36px 18px;
             box-shadow: 0 15px 45px rgba(220, 190, 195, 0.15);
+            width: 100%;
         }
 
         @media (min-width: 600px) {
@@ -57,7 +59,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .issue-tag {
@@ -73,7 +75,7 @@
             width: 100%;
             max-width: 450px;
             height: auto;
-            margin: 25px auto;
+            margin: 20px auto;
             display: block;
             animation: floatBalloon 6s ease-in-out infinite;
             filter: drop-shadow(0 8px 25px rgba(232, 165, 184, 0.35));
@@ -100,84 +102,87 @@
             font-weight: 600;
         }
 
-        /* ===== ЭФФЕКТ НАЛОЖЕНИЯ КАРТОЧЕК (ПОРТРЕТЫ) ===== */
+        /* ===== АДАПТИВНЫЙ БЛОК НАЛОЖЕНИЯ КАРТОЧЕК ===== */
         .photo-stack {
             position: relative;
             width: 100%;
-            max-width: 320px;
-            height: 420px;
-            margin: 40px auto 30px auto;
+            max-width: 300px;
+            aspect-ratio: 3 / 4; /* Пропорция блока для сохранения формы */
+            margin: 30px auto 25px auto;
         }
 
         .stack-card {
             position: absolute;
-            width: 85%;
-            height: 90%;
-            top: 5%;
-            left: 7.5%;
-            border-radius: 20px;
+            width: 80%;
+            height: 85%;
+            top: 7.5%;
+            left: 10%;
+            border-radius: 16px;
             object-fit: cover;
-            border: 4px solid #fff;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            border: 3px solid #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
             transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.3s;
         }
 
-        /* Углы поворота и позиционирование */
+        /* Углы поворота для десктопа */
         .stack-card:nth-child(1) {
-            transform: rotate(-6deg) translate(-15px, 0);
+            transform: rotate(-6deg) translate(-10px, 0);
             z-index: 1;
         }
 
         .stack-card:nth-child(2) {
-            transform: rotate(5deg) translate(15px, 10px);
+            transform: rotate(5deg) translate(10px, 8px);
             z-index: 2;
         }
 
         .stack-card:nth-child(3) {
-            transform: rotate(-2deg) translate(0, -5px);
+            transform: rotate(-2deg) translate(0, -4px);
             z-index: 3;
         }
 
-        /* Интерактив при наведении */
-        .photo-stack:hover .stack-card:nth-child(1) {
-            transform: rotate(-12deg) translate(-40px, -10px);
+        /* Интерактив при наведении / клике */
+        .photo-stack:hover .stack-card:nth-child(1),
+        .photo-stack:active .stack-card:nth-child(1) {
+            transform: rotate(-10deg) translate(-25px, -5px);
         }
 
-        .photo-stack:hover .stack-card:nth-child(2) {
-            transform: rotate(10deg) translate(40px, 15px);
+        .photo-stack:hover .stack-card:nth-child(2),
+        .photo-stack:active .stack-card:nth-child(2) {
+            transform: rotate(8deg) translate(25px, 10px);
         }
 
-        .photo-stack:hover .stack-card:nth-child(3) {
-            transform: rotate(0deg) translate(0, -15px) scale(1.02);
+        .photo-stack:hover .stack-card:nth-child(3),
+        .photo-stack:active .stack-card:nth-child(3) {
+            transform: rotate(0deg) translate(0, -10px) scale(1.02);
             z-index: 4;
         }
-        /* ================================================= */
 
         .caption {
             font-family: var(--font-serif);
             font-style: italic;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--accent-pink);
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
+            padding: 0 10px;
         }
 
-        /* ===== БЛОК С ТЕКСТОМ ===== */
+        /* ===== ТЕКСТОВЫЙ БЛОК ===== */
         .promo-block {
-            margin: 32px 0;
+            margin: 28px 0;
         }
 
         .promo-lead {
             font-size: 1.05rem;
             font-weight: 500;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             color: var(--text-main);
         }
 
         .arrow-list {
             list-style: none;
             margin-bottom: 24px;
-            padding-left: 8px;
+            padding-left: 4px;
         }
 
         .arrow-list li {
@@ -195,7 +200,7 @@
 
         .services-desc {
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.65;
             color: var(--text-main);
             font-weight: 300;
             margin-bottom: 16px;
@@ -204,71 +209,65 @@
         .brand-highlight {
             display: inline-block;
             background: rgba(232, 165, 184, 0.15);
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 12px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 500;
             color: var(--text-main);
-            margin-top: 8px;
+            margin-top: 6px;
             border: 1px solid var(--border-color);
         }
 
         .editorial-quote {
             border-left: 2px solid var(--accent-pink);
-            padding-left: 18px;
-            margin: 28px 0;
+            padding-left: 16px;
+            margin: 24px 0;
             font-style: italic;
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
 
-        /* ===== ГАЛЕРЕЯ ОБЩЕГО ПЛАНА (ПОКАЗЫ) ===== */
+        /* ===== АДАПТИВНАЯ ГАЛЕРЕЯ ПОКАЗОВ ===== */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 32px 0 12px 0;
+            gap: 10px;
+            margin: 28px 0 12px 0;
         }
 
         .gallery-item {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-radius: 14px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
             transition: transform 0.3s ease;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-4px);
-        }
-
-        /* Выделяем первое фото на всю ширину для динамики */
         .gallery-item.wide {
             grid-column: span 2;
-            height: 280px;
+            height: 260px;
         }
-        /* ========================================= */
 
         .editorial-divider {
             text-align: center;
-            margin: 40px 0;
+            margin: 32px 0;
             font-family: var(--font-serif);
             color: var(--accent-pink);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             letter-spacing: 0.3em;
         }
 
         .cta-box {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 32px;
         }
 
         .cta-button {
             display: inline-block;
             background-color: var(--text-main);
             color: #ffffff;
-            padding: 16px 40px;
+            padding: 16px 36px;
             border-radius: 40px;
             text-decoration: none;
             font-size: 0.85rem;
@@ -282,21 +281,23 @@
             transform: translateY(-2px);
         }
 
-        @media (max-width: 600px) {
+        /* Специфические стили для мобильных экранов */
+        @media (max-width: 480px) {
             .balloon-title {
                 max-width: 100%;
             }
             .subtitle-heading {
-                font-size: 1.5rem;
+                font-size: 1.45rem;
             }
             .photo-stack {
-                height: 360px;
+                max-width: 250px; /* Чуть уменьшаем стеки на узких экранах */
             }
             .gallery-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Фото встают одно под другим */
             }
-            .gallery-item.wide {
+            .gallery-item, .gallery-item.wide {
                 grid-column: span 1;
+                height: 240px;
             }
         }
     </style>
@@ -316,7 +317,7 @@
         </header>
 
         <section>
-            <!-- БЛОК С НАЛОЖЕНИЕМ КАРТОЧЕК (ПОРТРЕТЫ) -->
+            <!-- БЛОК С НАЛОЖЕНИЕМ КАРТОЧЕК -->
             <div class="photo-stack">
                 <img src="portrait1.jpg" alt="Макияж портрет 1" class="stack-card">
                 <img src="portrait2.jpg" alt="Макияж портрет 2" class="stack-card">
@@ -327,7 +328,7 @@
 
             <!-- ТЕКСТОВЫЙ БЛОК -->
             <div class="promo-block">
-                <p class="promo-lead">Подарить ей:</p>
+                <p class="promo-lead">Подарите ей:</p>
                 <ul class="arrow-list">
                     <li><span>→</span>новые ощущения</li>
                     <li><span>→</span>новый образ</li>
@@ -355,7 +356,7 @@
 
         <div class="editorial-divider">✦ ✦ ✦</div>
 
-        <!-- СЕКЦИЯ ОБЩИХ ПЛАНОВ (ПОКАЗЫ) -->
+        <!-- ГАЛЕРЕЯ ОБЩЕГО ПЛАНА -->
         <section>
             <div class="gallery-grid">
                 <img src="show-full.jpg" alt="Показ мод общий план" class="gallery-item wide">
@@ -368,10 +369,10 @@
         <div class="editorial-divider">✦ ✦ ✦</div>
 
         <section class="cta-box">
-            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; margin-bottom: 8px;">
+            <h2 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 300; margin-bottom: 8px;">
                 Запросить <span style="color: var(--accent-pink); font-style: italic;">презентацию</span>
             </h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 28px;">
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 24px;">
                 Свяжитесь с нами для расчета индивидуального формата
             </p>
             <a href="https://t.me/your_telegram_username" class="cta-button" target="_blank">Написать в Telegram</a>
